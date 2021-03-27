@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-decoration: none;
+  color: black;
+  justify-self: center;
+}
+
+.root:hover {
+  opacity: 0.8;
+}
+
+.videoTitle {
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 12px;
+}

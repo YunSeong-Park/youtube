@@ -4,7 +4,7 @@ import style from "./navbar.module.css";
 const Navbar = props => {
   return (
     <div className={style.root}>
-      <a href="#">
+      <a>
         <img className={style.logo} src="./logo.png" />
       </a>
       <form action="" className={style.form}>
