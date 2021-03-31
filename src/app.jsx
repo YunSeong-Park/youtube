@@ -1,12 +1,14 @@
+import { Route } from "react-router";
 import "./app.css";
 import Navbar from "./components/navbar";
-import VideoCards from "./components/videoCards";
+import Home from "./page/home";
 
 function App() {
   return (
     <>
       <Navbar />
-      <VideoCards />
+      <Route path="/" component={Home} />
+      <Route path="/video" component={VideoPage} />
     </>
   );
 }
