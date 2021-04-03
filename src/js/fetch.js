@@ -1,7 +1,7 @@
-const searchVideo = word => {
-  return fetch(
-    `https://www.googleapis.com/youtube/v3/search/?part=snippet&maxResults=25&q=${word}&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk`
-  )
+import VideoCard from "../components/videoCard";
+
+export const fetchVideo = url => {
+  return fetch(url)
     .then(response => response.json())
     .then(json =>
       json.items.map(video => {
