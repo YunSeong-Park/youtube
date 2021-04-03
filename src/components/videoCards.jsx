@@ -7,14 +7,14 @@ const loadVideo = () => {
     "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk"
   )
     .then(response => response.json())
-    .then(json => json.items.map(item => item.snippet))
-    .then(video =>
-      video.map(item => {
+    .then(json =>
+      json.items.map(video => {
         return {
-          publishedAt: item.publishedAt,
-          title: item.title,
-          channelTitle: item.channelTitle,
-          thumbnailMedium: item.thumbnails.medium.url,
+          videoId: video.id,
+          publishedAt: video.snippet.publishedAt,
+          title: video.snippet.title,
+          channelTitle: video.snippet.channelTitle,
+          thumbnailMedium: video.snippet.thumbnails.medium.url,
         };
       })
     )
@@ -23,6 +23,7 @@ const loadVideo = () => {
         return (
           <VideoCard
             key={i}
+            videoId={video.videoId}
             publishedAt={video.publishedAt}
             title={video.title}
             channelTitle={video.channelTitle}

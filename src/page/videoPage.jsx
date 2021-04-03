@@ -1,7 +1,8 @@
 import React from "react";
 import YouTube from "react-youtube";
 
-function VideoPage() {
+function VideoPage({ match }) {
+  console.log(match);
   return <YouTube></YouTube>;
 }
 

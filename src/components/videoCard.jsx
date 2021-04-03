@@ -4,7 +4,7 @@ import style from "./videoCard.module.css";
 
 const VideoCard = props => {
   return (
-    <Link to='/video' className={style.root}>
+    <Link to={`/video/${props.videoId}`} className={style.root}>
       <img className={style.thumbnail} src={props.thumbnail} alt='' />
       <h2 className={style.videoTitle}>{props.title}</h2>
       <div className={style.details}>

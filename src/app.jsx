@@ -9,7 +9,7 @@ function App() {
     <>
       <Navbar />
       <Route path='/' component={Home} exact />
-      <Route path='/video' component={VideoPage} />
+      <Route path='/video/:VideoId' component={VideoPage} />
     </>
   );
 }
