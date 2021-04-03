@@ -1,8 +1,12 @@
-import React from "react";
+import React, { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./navbar.module.css";
 
 const Navbar = props => {
+  const [word, setWord] = useState();
+  const onChange = e => {
+    setWord(e.target.value);
+  };
   return (
     <div className={style.root}>
       <Link to='/'>
@@ -15,13 +19,14 @@ const Navbar = props => {
           name='search'
           id=''
           placeholder='enter you want'
+          onChange={onChange}
         />
-        <button className='button' type='submit'>
-          Search
-        </button>
+        <Link to={`/search/${word}`}>
+          <button className={style.button}>Search</button>
+        </Link>
       </form>
     </div>
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
