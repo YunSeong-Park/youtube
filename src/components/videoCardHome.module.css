@@ -28,6 +28,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: black;
 }
 .channelTitle > img {
   width: 2.5rem;

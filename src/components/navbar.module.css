@@ -2,9 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5rem 2rem;
-  padding: 0.5rem 0.5rem;
-  min-width: 350px;
+  box-sizing: border-box;
+  padding: 0.2rem 0.2rem;
+  width: 100%;
+  min-width: 300px;
+  position: fixed;
+  background-color: #fff;
 }
 
 .form {
@@ -14,7 +17,7 @@
 
 .input_text {
   flex-grow: 1;
-  height: 40px;
+  height: 2.5rem;
   margin: 0px 1rem;
   font-size: 1.8rem;
 }
@@ -30,7 +33,7 @@
 
 .button {
   width: 100%;
-  height: 2.5rem;
+  height: 2.8rem;
   align-items: flex-end;
 }
 
@@ -43,7 +46,7 @@
 }
 
 @media screen and (max-width: 631px) {
-  .input_text {
-    display: none;
+  .root {
+    flex-direction: column;
   }
 }

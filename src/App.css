@@ -1,0 +1,8 @@
+.contents {
+  padding-top: 6rem;
+}
+@media screen and (max-width: 631px) {
+  .contents {
+    padding-top: 9rem;
+  }
+}
