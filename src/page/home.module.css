@@ -1,7 +1,6 @@
 .root {
   display: grid;
   grid-gap: 1rem;
-  background-color: grey;
   justify-content: center;
   align-self: center;
   padding: 0 1em;

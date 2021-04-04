@@ -5,6 +5,15 @@ import styleHome from "./videoCardHome.module.css";
 import styleSearch from "./videoCardSearch.module.css";
 
 const VideoCard = props => {
+  const publishedAtDate = new Date(props.publishedAt);
+  const publishedAt =
+    publishedAtDate.getFullYear() +
+    "년 " +
+    (publishedAtDate.getMonth() + 1) +
+    "월 " +
+    publishedAtDate.getDate() +
+    "일";
+
   return (
     <Link
       to={`/video/${props.videoId}`}
@@ -39,7 +48,7 @@ const VideoCard = props => {
               [styleHome.publishedAt]: props.page === "home",
               [styleSearch.publishedAt]: props.page === "search",
             })}>
-            {props.publishedAt}
+            {publishedAt}
           </p>
           <p
             className={clsx({
