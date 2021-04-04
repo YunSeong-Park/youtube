@@ -23,3 +23,14 @@
   justify-content: space-between;
   padding: 0px 12px;
 }
+
+.channelTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.channelTitle > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}

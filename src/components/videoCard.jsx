@@ -1,10 +1,18 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchChannel } from "../js/fetch";
 import styleHome from "./videoCardHome.module.css";
 import styleSearch from "./videoCardSearch.module.css";
 
 const VideoCard = props => {
+  const [channelsThumbnailSRC, setChannelsThumbnailSRC] = useState("#");
+  useEffect(() => {
+    fetchChannel(props.channelId).then(setChannelsThumbnailSRC);
+    // .then(channel => channel.snippet.thumbnails.default.url)
+    // .then(setChannelsThumbnailSRC);
+  }, []);
+
   const publishedAtDate = new Date(props.publishedAt);
   const publishedAt =
     publishedAtDate.getFullYear() +
@@ -55,6 +63,7 @@ const VideoCard = props => {
               [styleHome.channelTitle]: props.page === "home",
               [styleSearch.channelTitle]: props.page === "search",
             })}>
+            <img src={channelsThumbnailSRC} />
             {props.channelTitle}
           </p>
         </div>

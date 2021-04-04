@@ -12,7 +12,7 @@ function SearchPage({ match }) {
   useEffect(
     () =>
       fetchSearchVideoCards(searchUrl).then(response => setVideoCard(response)),
-    []
+    [match.params.word]
   );
 
   return <div className={style.root}>{videoCard.cards}</div>;

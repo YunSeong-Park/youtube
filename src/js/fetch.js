@@ -11,6 +11,7 @@ export const fetchVideo = url => {
           title: video.snippet.title,
           channelTitle: video.snippet.channelTitle,
           thumbnailMedium: video.snippet.thumbnails.medium.url,
+          channelId: video.snippet.channelId,
         };
       })
     );
@@ -28,6 +29,7 @@ export const fetchHomeVideoCards = url => {
             title={video.title}
             channelTitle={video.channelTitle}
             thumbnail={video.thumbnailMedium}
+            channelId={video.channelId}
             page='home'
           />
         );
@@ -50,6 +52,7 @@ export const fetchSearchVideoCards = url => {
             title={video.title}
             channelTitle={video.channelTitle}
             thumbnail={video.thumbnailMedium}
+            channelId={video.channelId}
             page='search'
           />
         );
@@ -58,4 +61,12 @@ export const fetchSearchVideoCards = url => {
     .then(cards => {
       return { cards };
     });
+};
+
+export const fetchChannel = channelId => {
+  return fetch(
+    `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk`
+  )
+    .then(response => response.json())
+    .then(json => json.items.find(() => true).snippet.thumbnails.default.url);
 };
