@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import VideoCard from "../components/videoCard";
-import { fetchVideo } from "../js/fetch";
+import { fetchHomeVideoCards } from "../js/fetch";
 import style from "./home.module.css";
 
 const Home = props => {
@@ -9,7 +8,7 @@ const Home = props => {
   });
 
   useEffect(
-    () => fetchVideo(mostUrl).then(response => setVideoCard(response)),
+    () => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)),
     []
   );
 

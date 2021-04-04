@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { fetchVideo } from "../js/fetch";
+import { fetchSearchVideoCards } from "../js/fetch";
+import style from "./searchPage.module.css";
 
 function SearchPage({ match }) {
   const searchUrl = `https://www.googleapis.com/youtube/v3/search/?part=snippet&maxResults=25&q=${match.params.word}&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk`;
@@ -9,11 +10,12 @@ function SearchPage({ match }) {
   });
 
   useEffect(
-    () => fetchVideo(searchUrl).then(response => setVideoCard(response)),
+    () =>
+      fetchSearchVideoCards(searchUrl).then(response => setVideoCard(response)),
     []
   );
 
-  return <div>{videoCard.cards}</div>;
+  return <div className={style.root}>{videoCard.cards}</div>;
 }
 
 export default SearchPage;
