@@ -45,12 +45,9 @@
 @media screen and (max-width: 631px) {
   .input_text {
     display: none;
-<<<<<<< HEAD
   }
   .logo {
     width: 90%;
     object-fit: cover;
-=======
->>>>>>> parent of 621f514 (add fixed navbar)
   }
 }
