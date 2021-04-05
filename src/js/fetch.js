@@ -3,18 +3,11 @@ import VideoCard from "../components/videoCard";
 export const fetchVideo = url => {
   return fetch(url)
     .then(response => response.json())
-    .then(json => {
+    .then(json =>
       json.items.map(video => {
-        return {
-          videoId: video.id,
-          publishedAt: video.snippet.publishedAt,
-          title: video.snippet.title,
-          channelTitle: video.snippet.channelTitle,
-          thumbnailMedium: video.snippet.thumbnails.medium.url,
-          channelId: video.snippet.channelId,
-        };
-      });
-    });
+        return { videoId: video.id, publishedAt: video.snippet.publishedAt, title: video.snippet.title, channelTitle: video.snippet.channelTitle, thumbnailMedium: video.snippet.thumbnails.medium.url, channelId: video.snippet.channelId };
+      })
+    );
 };
 
 export const fetchHomeVideoCards = url => {

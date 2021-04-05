@@ -8,11 +8,7 @@ const Home = props => {
   });
 
   useEffect(
-    useCallback(() =>
-      fetchHomeVideoCards(mostUrl)
-        .then(response => setVideoCard(response))
-        .catch(console.log)
-    ),
+    useCallback(() => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response))),
     []
   );
 
