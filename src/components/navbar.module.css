@@ -46,8 +46,4 @@
   .input_text {
     display: none;
   }
-  .logo {
-    width: 90%;
-    object-fit: cover;
-  }
 }
