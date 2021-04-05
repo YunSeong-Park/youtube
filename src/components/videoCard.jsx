@@ -8,8 +8,9 @@ import styleSearch from "./videoCardSearch.module.css";
 const VideoCard = props => {
   const [channelsThumbnailSRC, setChannelsThumbnailSRC] = useState("#");
   useEffect(() => {
-    const channelId = props.channelId;
-    fetchChannel(channelId).then(setChannelsThumbnailSRC);
+    fetchChannel(props.channelId).then(setChannelsThumbnailSRC);
+    // .then(channel => channel.snippet.thumbnails.default.url)
+    // .then(setChannelsThumbnailSRC);
   }, []);
 
   const publishedAtDate = new Date(props.publishedAt);

@@ -7,11 +7,15 @@ const Home = props => {
     cards: <h1> 잠시만 기다려주세요. </h1>,
   });
 
-  useEffect(() => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)), []);
+  useEffect(
+    () => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)),
+    []
+  );
 
   return <div className={style.root}>{videoCard.cards}</div>;
 };
 
 export default Home;
 
-const mostUrl = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk";
+const mostUrl =
+  "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk";
