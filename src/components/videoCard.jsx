@@ -13,7 +13,13 @@ const VideoCard = props => {
   }, []);
 
   const publishedAtDate = new Date(props.publishedAt);
-  const publishedAt = publishedAtDate.getFullYear() + "년 " + (publishedAtDate.getMonth() + 1) + "월 " + publishedAtDate.getDate() + "일";
+  const publishedAt =
+    publishedAtDate.getFullYear() +
+    "년 " +
+    (publishedAtDate.getMonth() + 1) +
+    "월 " +
+    publishedAtDate.getDate() +
+    "일";
 
   return (
     <Link
@@ -51,15 +57,14 @@ const VideoCard = props => {
             })}>
             {publishedAt}
           </p>
-          <Link
-            to={`/channel/${props.channelId}`}
+          <p
             className={clsx({
               [styleHome.channelTitle]: props.page === "home",
               [styleSearch.channelTitle]: props.page === "search",
             })}>
             <img src={channelsThumbnailSRC} />
             {props.channelTitle}
-          </Link>
+          </p>
         </div>
       </div>
     </Link>

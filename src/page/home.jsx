@@ -7,10 +7,7 @@ const Home = props => {
     cards: <h1> 잠시만 기다려주세요. </h1>,
   });
 
-  useEffect(
-    //() => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)),
-    []
-  );
+  useEffect(() => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)), []);
 
   return <div className={style.root}>{videoCard.cards}</div>;
 };
