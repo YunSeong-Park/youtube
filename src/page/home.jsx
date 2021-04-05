@@ -8,7 +8,7 @@ const Home = props => {
   });
 
   useEffect(
-    () => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)),
+    //() => fetchHomeVideoCards(mostUrl).then(response => setVideoCard(response)),
     []
   );
 
@@ -17,5 +17,4 @@ const Home = props => {
 
 export default Home;
 
-const mostUrl =
-  "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk";
+const mostUrl = "https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDpoRaLJ6dO0X-x_xytvjU4dIbTlUkBnXk";
