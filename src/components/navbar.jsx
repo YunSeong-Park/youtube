@@ -13,14 +13,7 @@ const Navbar = props => {
         <img className={style.logo} src='./logo.png' />
       </Link>
       <form action='' className={style.form}>
-        <input
-          className={style.input_text}
-          type='text'
-          name='search'
-          id=''
-          placeholder='enter you want'
-          onChange={onChange}
-        />
+        <input className={style.input_text} type='text' name='search' id='' placeholder='enter you want' onChange={onChange} />
         <Link to={`/search/${word}`}>
           <button className={style.button}>Search</button>
         </Link>
