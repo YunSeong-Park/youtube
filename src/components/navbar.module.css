@@ -43,7 +43,11 @@
 }
 
 @media screen and (max-width: 631px) {
-  .input_text {
-    display: none;
+  .root {
+    flex-direction: column;
+  }
+  .logo {
+    object-fit: cover;
+    height: 150px;
   }
 }
