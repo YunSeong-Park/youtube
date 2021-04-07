@@ -19,6 +19,9 @@ export const fetchHomeVideoCards = url => {
     })
     .then(cards => {
       return { cards };
+    })
+    .catch(e => {
+      cards: <h1>youtube api의 일일 쿼리가 초과했습니다.</h1>;
     });
 };
 
@@ -31,6 +34,9 @@ export const fetchSearchVideoCards = url => {
     })
     .then(cards => {
       return { cards };
+    })
+    .catch(e => {
+      cards: <h1>youtube api의 일일 쿼리가 초과했습니다.</h1>;
     });
 };
 
